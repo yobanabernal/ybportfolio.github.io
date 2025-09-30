@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yobana — Portfolio</title>
+<meta name="description" content="Hi, I'm Yobana — Business & Info Systems grad exploring data and creative/PR.">
+
+<style>
+/* ===== Severance-inspired palette ===== */
+:root{
+  --bg:#21252C;            /* off-black/slate */
+  --panel:#2E343F;         /* gunmetal panel */
+  --ink:#F0F2F4;           /* primary text */
+  --muted:#B0B8C1;         /* secondary text */
+  --line:#3C424D;          /* dividers */
+  --accent:#4BC0C8;        /* cyan accent */
+  --accent-soft:#7FD9DE;   /* lighter accent */
+  --rad:16px;
+}
+
+/* base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(60vw 40vw at 15% 0%, #26303a 0%, transparent 60%),
+    radial-gradient(70vw 50vw at 85% -10%, #1b2027 0%, transparent 60%),
+    var(--bg);
+  line-height:1.6;
+}
+a{color:var(--accent); text-decoration:none}
+.container{max-width:1024px; margin:0 auto; padding:20px 20px 80px}
+
+/* top nav w/ dropdown on right */
+.nav{
+  display:flex; align-items:center; justify-content:flex-end; gap:14px;
+  padding:10px 0; border-bottom:1px solid var(--line); margin-bottom:22px;
+}
+.nav a{opacity:.9}
+.nav a:hover{opacity:1}
+.dropdown{position:relative}
+.dropbtn{
+  background:none; border:1px solid var(--line); color:var(--ink);
+  padding:8px 12px; border-radius:999px; cursor:pointer
+}
+.menu{
+  position:absolute; right:0; top:calc(100% + 8px);
+  background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  min-width:220px; padding:8px; display:none; z-index:10;
+}
+.menu a{display:block; padding:8px 10px; border-radius:8px}
+.menu a:hover{background:#28303a}
+.dropdown:focus-within .menu,
+.dropbtn:focus + .menu{display:block}
+
+/* hero two-column like your screenshot */
+.hero{
+  display:grid; grid-template-columns:0.9fr 1.1fr; gap:26px; align-items:start;
+}
+.figure{
+  background:var(--panel); border:1px solid var(--line); border-radius:var(--rad);
+  padding:12px; text-align:center;
+}
+.figure img{
+  width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:10px; display:block;
+}
+.figcap{color:var(--muted); font-size:.9rem; margin-top:8px}
+.cta-small{
+  margin-top:10px; display:inline-block; font-weight:700;
+  background:var(--accent); color:#0f1216; padding:8px 12px; border-radius:999px;
+}
+
+/* right column text */
+.kicker{color:var(--accent-soft); text-transform:uppercase; letter-spacing:.4px; font-weight:700; font-size:.85rem}
+h1{margin:6px 0 6px; font-size:clamp(26px,4vw,40px); line-height:1.15; text-align:center}
+.pronounce{color:var(--muted); font-size:.95rem; text-align:center; margin-top:-4px}
+.rule{height:1px; background:var(--line); margin:14px 0}
+.bio p{margin:10px 0; color:var(--muted)}
+.highlight{color:var(--accent)}
+.center{text-align:center}
+
+/* footer */
+.footer{
+  margin-top:28px; border-top:1px solid var(--line); padding-top:16px;
+  color:var(--muted); font-size:.95rem; display:flex; flex-wrap:wrap; gap:10px; justify-content:center
+}
+
+/* responsive */
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  h1,.pronounce,.center{ text-align:left }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- nav -->
+    <div class="nav">
+      <a href="/">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn">Selected Works ▾</button>
+        <div class="menu" role="menu" aria-label="Selected Works">
+          <!-- swap these links -->
+          <a href="/python.html">Python</a>
+          <a href="/written.html">Written Works</a>
+          <a href="/creative.html">Creative Projects</a>
+          <a href="/media-pr.html">Digital Media & PR Samples</a>
+          <a href="/tableau-powerbi.html">Tableau / PowerBI</a>
+          <a href="/sql.html">SQL</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- hero -->
+    <section class="hero" aria-labelledby="intro-title">
+      <!-- left: image card -->
+      <figure class="figure">
+        <!-- replace with your image file -->
+        <img src="your-photo.jpg" alt="Yobana next to Chip">
+        <figcaption class="figcap">Me and Chip! 🐿️</figcaption>
+        <a class="cta-small" href="#works">✨ Go to Selected Works</a>
+      </figure>
+
+      <!-- right: bio block -->
+      <div class="bio">
+        <div class="kicker center">welcome</div>
+        <h1 id="intro-title">Hi, I’m Yobana</h1>
+        <div class="pronounce">(Pronounced as Yo-ban-ah)</div>
+        <div class="rule"></div>
+
+        <!-- paste/adjust your OG bio below -->
+        <p>
+          Hi there! I recently graduated from the University of California–Riverside with a degree in Business Administration,
+          concentrating in Information Systems. My friends would describe me as kind-hearted, reliable, and hardworking—qualities
+          I try to bring to everything I do.
+        </p>
+        <p>
+          A wise man (one of my professors actually!) once said, “Education is something that is taught to you, learning is something you choose to do for yourself.”
+          I really believe in the practice of lifelong learning and feel the best type of experience is just “doing it!” No matter
+          how big or small the item/project/action may be!
+        </p>
+        <p>
+          My education taught me how to combine business and technology: analyze data, improve processes, and implement systems that help organizations run more efficiently.
+          Since graduating, I’ve gained experience in client-facing, administrative, and research-based roles, which strengthened my communication, problem-solving, and organization.
+        </p>
+        <p class="highlight"><strong>
+          Lately, I’ve been especially interested in the creative side of business—exploring PR, content, and media projects—while continuing to build data/ops skills.
+        </strong></p>
+        <p class="center">
+          I am open to internships, part-time positions, and all “hands-on” projects!
+        </p>
+        <p class="center">
+          To get started, navigate to the top right and make a selection!
+        </p>
+      </div>
+    </section>
+
+    <!-- anchor to mimic your “Selected Works” jump -->
+    <div id="works"></div>
+
+    <!-- footer quick links (optional) -->
+    <div class="footer">
+      <a href="/about.html">About</a> •
+      <a href="resume.pdf" target="_blank" rel="noopener">Resume</a> •
+      <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a> •
+      <a href="mailto:you@email.com">Email</a>
+    </div>
+  </div>
+</body>
+</html>
